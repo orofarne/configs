@@ -1,0 +1,79 @@
+" options
+filetype plugin on
+filetype indent on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nu
+set mouse=a
+
+try
+    set colorcolumn=80
+catch
+endtry
+
+set list!
+"set listchars=tab:→‥
+set listchars=tab:→\ 
+colorscheme tango
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set smarttab
+
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indet
+set nowrap "Wrap lines
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git anyway...
+set nobackup
+
+"Persistent undo
+try
+    set undodir=~/.vim_runtime/undodir
+    set undofile
+catch
+endtry
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => System integration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Use X clipboard
+"it works only if vim builded with '+clipboard' option
+set clipboard=unnamed
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Hotkeys
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F5> :NERDTree<cr>
+map <F6> :NERDTreeClose<cr>
+map <F9> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Install vundle:
+"  see https://github.com/gmarik/vundle
+" Install configured bundles:
+"  run :BundleInstall
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'bronson/vim-trailing-whitespace'
+
