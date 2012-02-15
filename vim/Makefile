@@ -9,3 +9,4 @@ install: all
 	vim -c "BundleInstall" -c "quitall"
 clean:
 
+.PHONY: clean install
