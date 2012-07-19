@@ -9,4 +9,7 @@ install: all
 	vim -c "BundleInstall" -c "quitall"
 clean:
 
-.PHONY: clean install
+uninstall:
+	rm -rf $(HOME)/.vimrc $(HOME)/.vim
+
+.PHONY: clean install uninstall
