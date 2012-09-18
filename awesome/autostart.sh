@@ -7,7 +7,7 @@ guard_file="/tmp/$USERNAME""_awesome_autostart.guard"
 # applications
 kbdd
 xscreensaver &
-urxvtd -f
+#urxvtd -f
 
-autocutsel &
-autocutsel -s PRIMARY &
+#autocutsel &
+#autocutsel -s PRIMARY &
