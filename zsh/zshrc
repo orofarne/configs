@@ -1,0 +1,14 @@
+autoload -U colors && colors
+
+PS1="%{$fg[blue]%}%n@%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+RPROMPT="%{$fg[red]%}%(?..[%?] )%{$reset_color%}"
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias x='xdg-open'
+
+
+export PATH="$PATH:$HOME/bin"
