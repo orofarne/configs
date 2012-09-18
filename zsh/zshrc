@@ -1,6 +1,6 @@
 autoload -U colors && colors
 
-PS1="%{$fg[blue]%}%n@%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+PS1="%{$fg[blue]%}%n%{$fg[cyan]%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 RPROMPT="%{$fg[red]%}%(?..[%?] )%{$reset_color%}"
 
 ## файл истории команд
