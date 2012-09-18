@@ -14,9 +14,9 @@ catch
 endtry
 
 set list!
-"set listchars=tab:→‥
 set listchars=tab:→\ 
-colorscheme tango
+set t_Co=256
+colorscheme ir_black
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related

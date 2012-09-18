@@ -12,3 +12,4 @@ alias x='xdg-open'
 
 
 export PATH="$PATH:$HOME/bin"
+export TERM='xterm-256color'
