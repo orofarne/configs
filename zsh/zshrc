@@ -3,6 +3,20 @@ autoload -U colors && colors
 PS1="%{$fg[blue]%}%n@%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 RPROMPT="%{$fg[red]%}%(?..[%?] )%{$reset_color%}"
 
+## файл истории команд
+## если не указан, история не будет сохраняться
+## при выходе из сеанса
+HISTFILE=~/.zhistory
+
+## Число команд, сохраняемых в HISTFILE
+SAVEHIST=5000
+
+## Чucлo koмaнg, coxpaняeмыx в сеансе
+HISTSIZE=5000
+## Примечание:
+## рекомендуются равные значения для
+## SAVEHIST и HISTSIZE
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
