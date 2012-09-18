@@ -15,7 +15,12 @@ endtry
 
 set list!
 set listchars=tab:→\ 
-colorscheme ir_black
+
+if &t_Co == 256
+    colorscheme ir_black
+else
+    colorscheme tango
+end
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
