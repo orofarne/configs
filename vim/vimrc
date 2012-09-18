@@ -15,7 +15,6 @@ endtry
 
 set list!
 set listchars=tab:→\ 
-set t_Co=256
 colorscheme ir_black
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
