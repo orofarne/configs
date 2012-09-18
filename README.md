@@ -1,4 +1,4 @@
 INSTALL
 =======
-    make install clean
+    make install
 for each subdirectory

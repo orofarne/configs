@@ -7,9 +7,8 @@ install: all
 	install -d $(HOME)/.vim_runtime/undodir
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	vim -c "BundleInstall" -c "quitall"
-clean:
 
 uninstall:
 	rm -rf $(HOME)/.vimrc $(HOME)/.vim
 
-.PHONY: clean install uninstall
+.PHONY: install uninstall
