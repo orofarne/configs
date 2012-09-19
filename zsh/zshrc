@@ -1,3 +1,5 @@
+[ $TMUX ] && export TERM="screen-256color"
+
 autoload -U colors && colors
 
 PS1="%{$fg[blue]%}%n%{$fg[cyan]%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
