@@ -20,6 +20,7 @@ beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt -e tmux"
+terminal_simple = "urxvt"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -261,6 +262,7 @@ globalkeys = awful.util.table.join(
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey, "Shift"   }, "Return", function () awful.util.spawn(terminal_simple) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
@@ -354,9 +356,11 @@ end
 
 --User global hotkeys
 globalkeys = awful.util.table.join(globalkeys,
-     awful.key({}, "XF86AudioMute", function() awful.util.spawn_with_shell('pavolume toggle') end),
-     awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn_with_shell('pavolume decrease') end),
-     awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn_with_shell('pavolume increase') end)
+    awful.key({ modkey, }, "c", function() awful.util.spawn_with_shell('xclip -o -selection primary | xclip -i -selection clipboard') end),
+    awful.key({ modkey, }, "v", function() awful.util.spawn_with_shell('xclip -o -selection clipboard | xclip -i -selection primary') end),
+    awful.key({}, "XF86AudioMute", function() awful.util.spawn_with_shell('pavolume toggle') end),
+    awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn_with_shell('pavolume decrease') end),
+    awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn_with_shell('pavolume increase') end)
 )
 
 clientbuttons = awful.util.table.join(
