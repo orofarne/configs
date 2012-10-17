@@ -13,6 +13,8 @@ require("vicious")
 require("debian.menu")
 -- Battery
 require("battery")
+-- PulseAudio
+require("pulseaudio")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -196,6 +198,24 @@ for s = 1, screen.count() do
 
     -- }}}
 
+    -- {{{ PulseAudio Widget
+    volumewidget = widget({
+        type = "textbox",
+        name = "volumewidget",
+        align = "right"
+    })
+
+    --volumewidget:buttons(awful.util.table.join(
+    --    awful.button({ }, 1, function () pulseaudio.volumeMute() end),
+    --    awful.button({ }, 4, function () pulseaudio.volumeUp() end),
+    --    awful.button({ }, 5, function () pulseaudio.volumeDown() end)
+    --))
+    volumewidget.text = pulseaudio.volumeInfo()
+    volumetimer = timer({ timeout = 30 })
+    volumetimer:add_signal("timeout", function() volumewidget.text = pulseaudio.volumeInfo() end)
+    volumetimer:start()
+    -- }}}
+
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
     -- Add widgets to the wibox - order matters
@@ -212,6 +232,7 @@ for s = 1, screen.count() do
         cpuwidget,
         memwidget,
         batterywidget,
+        volumewidget,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -358,9 +379,9 @@ end
 globalkeys = awful.util.table.join(globalkeys,
     awful.key({ modkey, }, "c", function() awful.util.spawn_with_shell('xclip -o -selection primary | xclip -i -selection clipboard') end),
     awful.key({ modkey, }, "v", function() awful.util.spawn_with_shell('xclip -o -selection clipboard | xclip -i -selection primary') end),
-    awful.key({}, "XF86AudioMute", function() awful.util.spawn_with_shell('pavolume toggle') end),
-    awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn_with_shell('pavolume decrease') end),
-    awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn_with_shell('pavolume increase') end)
+    awful.key({}, "XF86AudioMute", function() pulseaudio.volumeMute(); volumewidget.text = pulseaudio.volumeInfo() end),
+    awful.key({}, "XF86AudioLowerVolume", function() pulseaudio.volumeDown(); volumewidget.text = pulseaudio.volumeInfo() end),
+    awful.key({}, "XF86AudioRaiseVolume", function() pulseaudio.volumeUp(); volumewidget.text = pulseaudio.volumeInfo() end)
 )
 
 clientbuttons = awful.util.table.join(
