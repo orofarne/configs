@@ -20,3 +20,4 @@ urxvt*shading: 40
 urxvt*fading: 40
 urxvt*font: xft:DejaVu Sans Mono:style=roman:pixelsize=12
 urxvt*scrollBar: false
+Rxvt*colorIT: #ff0000
