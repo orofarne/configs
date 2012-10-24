@@ -2,6 +2,43 @@
 
 autoload -U colors && colors
 
+# show execution time of command if it -gt 10
+note_remind=0
+note_ignore="yes"
+note_command="?"
+
+note_report()
+{
+    echo ""
+    echo -e "$fg[red]note_report: $note_command completed in $1 seconds$reset_color"
+}
+
+preexec()
+{
+    if [ "x$TTY" != "x" ]; then
+        note_remind="$SECONDS"
+        note_ignore=""
+        note_command="$2"
+    fi
+}
+
+precmd()
+{
+    local xx
+    if [ "x$TTY" != "x" ]; then
+        if [ "x$note_ignore" = "x" ]; then
+            note_ignore="yes"
+            xx=$(($SECONDS-$note_remind))
+            if [ $xx -gt 10 ]; then
+                if [ $TTYIDLE -gt 10 ]; then
+                    note_report $xx
+                fi
+            fi
+        fi
+    fi
+}
+
+# promts
 PS1="%{$fg[blue]%}%n%{$fg[cyan]%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 RPROMPT="%{$fg[red]%}%(?..[%?] )%{$reset_color%}"
 
