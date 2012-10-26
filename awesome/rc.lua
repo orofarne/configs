@@ -378,7 +378,7 @@ end
 --User global hotkeys
 globalkeys = awful.util.table.join(globalkeys,
     awful.key({ modkey, }, "c", function() awful.util.spawn_with_shell('xclip -o -selection primary | xclip -i -selection clipboard') end),
-    awful.key({ modkey, }, "v", function() awful.util.spawn_with_shell('xclip -o -selection clipboard | xclip -i -selection primary') end),
+    awful.key({ modkey, }, "v", function() awful.util.spawn_with_shell('xclip -o -selection clipboard | xclip -i -selection primary; xvkbd -no-jump-pointer -xsendevent -text `xsel` 2>/dev/null') end),
     awful.key({}, "XF86AudioMute", function() pulseaudio.volumeMute(); volumewidget.text = pulseaudio.volumeInfo() end),
     awful.key({}, "XF86AudioLowerVolume", function() pulseaudio.volumeDown(); volumewidget.text = pulseaudio.volumeInfo() end),
     awful.key({}, "XF86AudioRaiseVolume", function() pulseaudio.volumeUp(); volumewidget.text = pulseaudio.volumeInfo() end)
