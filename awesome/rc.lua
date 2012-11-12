@@ -23,6 +23,7 @@ beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt -e tmux"
 terminal_simple = "urxvt"
+terminal_mc = "urxvt -e mc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -284,6 +285,7 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Shift"   }, "Return", function () awful.util.spawn(terminal_simple) end),
+    awful.key({ modkey, "Control" }, "Return", function () awful.util.spawn(terminal_mc) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 

@@ -67,3 +67,6 @@ alias x='xdg-open'
 
 export PATH="$PATH:$HOME/bin"
 export TERM='screen-256color' #FIXME
+
+[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
