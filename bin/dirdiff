@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+DIR1=$1
+DIR2=$2
+
+vimdiff <(cd "$DIR1"; find . | sort) <(cd "$DIR2"; find . | sort)
