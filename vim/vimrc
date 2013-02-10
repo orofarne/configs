@@ -80,10 +80,3 @@ Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'vim-scripts/dbext.vim'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Smart SQL interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MySQL
-let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root'
