@@ -1,8 +1,6 @@
-[ $TMUX ] && export TERM="screen-256color"
-
 autoload -U colors && colors
 
-# show execution time of command if it -gt 10
+## show execution time of command if it -gt 10
 note_remind=0
 note_ignore="yes"
 note_command="?"
@@ -38,7 +36,7 @@ precmd()
     fi
 }
 
-# promts
+## promts
 PS1="%{$fg[blue]%}%n%{$fg[cyan]%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 RPROMPT="%{$fg[red]%}%(?..[%?] )%{$reset_color%}"
 
@@ -56,6 +54,35 @@ HISTSIZE=5000
 ## рекомендуются равные значения для
 ## SAVEHIST и HISTSIZE
 
+## Установка нормального поведения клавиш Delete, Home, End и т.д.:
+case $TERM in
+        linux)
+bindkey "^[[2~" yank
+bindkey "^[[3~" delete-char
+bindkey "^[[5~" up-line-or-history
+bindkey "^[[6~" down-line-or-history
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[e" expand-cmd-path ## C-e for expanding path of typed command
+bindkey "^[[A" up-line-or-search ## up arrow for back-history-search
+bindkey "^[[B" down-line-or-search ## down arrow for fwd-history-search
+bindkey " " magic-space ## do history expansion on space
+;;
+*xterm*|rxvt|(dt|k|E)term)
+bindkey "^[[2~" yank
+bindkey "^[[3~" delete-char
+bindkey "^[[5~" up-line-or-history
+bindkey "^[[6~" down-line-or-history
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[e" expand-cmd-path ## C-e for expanding path of typed command
+bindkey "^[[A" up-line-or-search ## up arrow for back-history-search
+bindkey "^[[B" down-line-or-search ## down arrow for fwd-history-search
+bindkey " " magic-space ## do history expansion on space
+;;
+esac
+
+## aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -63,3 +90,8 @@ alias egrep='egrep --color=auto'
 alias tree='tree -C'
 alias pssh='parallel-ssh -i -t0'
 alias x='xdg-open'
+
+## alias'ы для команд, не требующих коррекции, но требующих подтверждения
+alias mv='nocorrect mv -i'      # переименование-перемещение c пogтвepжgeнueм
+alias cp='nocorrect cp -iR'     # рекурсивное копирование с подтверждением
+alias rm='nocorrect rm -i'      # удаление с подтверждением
