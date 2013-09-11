@@ -1,2 +1,2 @@
 #!/bin/sh
-git log --pretty=format:'%h : %s' --graph --color=auto
+git log --pretty=format:'%C(blue)%ad%Creset %C(green)%cn%Creset %C(yellow)%h%Creset %s' --graph --color=auto --date=short
