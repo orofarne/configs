@@ -22,6 +22,9 @@ else
     colorscheme tango
 end
 
+" bash-like tab completion
+set wildmode=longest,list,full
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
