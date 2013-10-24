@@ -83,5 +83,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'derekwyatt/vim-scala'
 Bundle 'motemen/git-vim'
+" Bundle 'derekwyatt/vim-scala'
+Bundle 'jnwhiteh/vim-golang'
