@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+INFILE=$1
+OUTFILE=$2
+
+[[ "x$INFILE" == "x" ]] && exit 1
+[[ "x$OUTFILE" == "x" ]] && exit 1
+
+TMP=`mktemp -d`
+
+# Convert
+convert "$INFILE" "$TMP/img.pnm"
+c44 -slice 74+13+10 "$TMP/img.pnm" "$OUTFILE"
+
+# Clean up
+rm "$TMP/img.pnm"
+rmdir "$TMP"

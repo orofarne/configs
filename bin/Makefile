@@ -1,4 +1,4 @@
-FILES=colortable tmuxcolorlist git-touch git-tree git-wtf vimmake dirdiff optimize_jpeg
+FILES=colortable tmuxcolorlist git-touch git-tree git-wtf vimmake dirdiff optimize_jpeg to_c44
 
 all: $(FILES)
 
