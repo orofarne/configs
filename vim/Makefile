@@ -11,6 +11,7 @@ install: all
 	install -d $(HOME)/.vim_runtime/undodir
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	vim -c "BundleInstall" -c "quitall"
+	sh -c "cd $(HOME)/.vim/bundle/vimproc.vim && make -f make_unix.mak"
 
 uninstall:
 	rm -rf $(HOME)/.vimrc $(HOME)/.vim
