@@ -119,9 +119,9 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'motemen/git-vim'
-" Bundle 'derekwyatt/vim-scala'
+Bundle 'derekwyatt/vim-scala'
 Bundle 'jnwhiteh/vim-golang'
-
+Bundle 'millermedeiros/vim-statline'
 " Unite
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
