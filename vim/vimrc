@@ -1,6 +1,7 @@
 " options
 filetype plugin on
 filetype indent on
+set shell=/bin/bash
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => interface

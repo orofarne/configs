@@ -9,7 +9,7 @@ install: all
 	install -d $(HOME)/.vim/ftdetect
 	install -t $(HOME)/.vim/ftdetect -m 644 ftdetect/*
 	install -d $(HOME)/.vim_runtime/undodir
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 	vim -c "BundleInstall" -c "quitall"
 
 uninstall:
