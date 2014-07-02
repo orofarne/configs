@@ -11,6 +11,7 @@ install: all
 	install -d $(HOME)/.vim_runtime/undodir
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 	vim -c "BundleInstall" -c "quitall"
+	bash -c "cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer"
 
 uninstall:
 	rm -rf $(HOME)/.vimrc $(HOME)/.vim

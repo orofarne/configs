@@ -79,5 +79,11 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'motemen/git-vim'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 Bundle 'millermedeiros/vim-statline'
+Bundle 'Valloric/YouCompleteMe'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_autoclose_preview_window_after_completion = 1
