@@ -20,7 +20,8 @@ set listchars=tab:→\
 if &t_Co == 256
     colorscheme ir_black
 else
-    colorscheme tango
+    " colorscheme tango
+    colorscheme twilight
 end
 
 " bash-like tab completion
