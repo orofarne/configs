@@ -83,9 +83,17 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'fatih/vim-go'
 Bundle 'millermedeiros/vim-statline'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'kien/ctrlp.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:go_fmt_command = "gofmt"
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|_vendor)$',
+  \ 'file': '\v\.(so|swp)$',
+  \ }
