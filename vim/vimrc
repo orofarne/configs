@@ -84,6 +84,7 @@ Bundle 'fatih/vim-go'
 Bundle 'millermedeiros/vim-statline'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
+Bundle 'terryma/vim-multiple-cursors'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins configuration
