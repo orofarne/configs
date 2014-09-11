@@ -1,0 +1,3 @@
+#!/bin/sh -ex
+
+ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
