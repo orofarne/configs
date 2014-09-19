@@ -83,6 +83,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'mileszs/ack.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins configuration
