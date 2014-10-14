@@ -1,6 +1,4 @@
 set -x PATH $PATH "$HOME/bin"
-set -x GOROOT "$HOME/opt/go"
-set -x PATH $PATH "$GOROOT/bin"
 
 # fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
