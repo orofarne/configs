@@ -1,6 +1,4 @@
 set -x PATH $PATH "$HOME/bin"
-set -x GOROOT "$HOME/opt/go"
-set -x PATH $PATH "$GOROOT/bin"
 
 alias x=xdg-open
 
