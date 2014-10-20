@@ -2,6 +2,8 @@ set -x PATH $PATH "$HOME/bin"
 set -x GOROOT "$HOME/opt/go"
 set -x PATH $PATH "$GOROOT/bin"
 
+alias x=xdg-open
+
 # fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
