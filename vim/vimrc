@@ -18,8 +18,6 @@ set list!
 set listchars=tab:→\ 
 
 colorscheme monokai
-" colorscheme tango
-" colorscheme twilight
 
 " bash-like tab completion
 set wildmode=longest,list,full
@@ -67,30 +65,30 @@ set clipboard=unnamed
 " Install configured bundles:
 "  run :BundleInstall
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+" Bundle 'gmarik/vundle'
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'motemen/git-vim'
-Bundle 'millermedeiros/vim-statline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mileszs/ack.vim'
+" Bundle 'scrooloose/nerdtree'
+" Bundle 'bronson/vim-trailing-whitespace'
+" Bundle 'motemen/git-vim'
+" Bundle 'millermedeiros/vim-statline'
+" Bundle 'kien/ctrlp.vim'
+" Bundle 'terryma/vim-multiple-cursors'
+" Bundle 'airblade/vim-gitgutter'
+" Bundle 'mileszs/ack.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:go_fmt_command = "gofmt"
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|_vendor)$',
-  \ 'file': '\v\.(a|so|swp)$',
-  \ }
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:go_fmt_command = "gofmt"
+" set runtimepath^=~/.vim/bundle/ctrlp.vim
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\v[\/](\.(git|hg|svn)|_vendor)$',
+"   \ 'file': '\v\.(a|so|swp)$',
+"   \ }

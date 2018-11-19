@@ -1,18 +1,15 @@
 all:
+	@echo "Use install/uninstall"
 
-install: all
+install-core: all
 	install vimrc $(HOME)/.vimrc
 	install -d $(HOME)/.vim/colors
-	install -t $(HOME)/.vim/colors -m 644 colors/*
-	install -d $(HOME)/.vim/syntax
-	install -t $(HOME)/.vim/syntax -m 644 syntax/*
-	install -d $(HOME)/.vim/ftdetect
-	install -t $(HOME)/.vim/ftdetect -m 644 ftdetect/*
+	install -m 644 colors/* $(HOME)/.vim/colors
 	install -d $(HOME)/.vim_runtime/undodir
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
-	vim -c "BundleInstall" -c "quitall"
+
+install: install-core
 
 uninstall:
 	rm -rf $(HOME)/.vimrc $(HOME)/.vim
 
-.PHONY: install uninstall
+.PHONY: install uninstall install-core
