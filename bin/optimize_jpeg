@@ -1,8 +1,0 @@
-#!/bin/bash -ex
-
-FILE=$1
-[[ "x$FILE" == "x" ]] && exit 1
-TMP_FILE=`mktemp`
-
-convert -interlace Plane -quality 0.75 "$FILE" "$TMP_FILE"
-mv "$TMP_FILE" "$FILE"

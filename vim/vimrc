@@ -70,4 +70,3 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
-Plugin 'davidhalter/jedi-vim'
